@@ -34,7 +34,4 @@ public class CelestialObjectService {
         List<CelestialObject> CelestialObjects = (List<CelestialObject>) CelestialObjectRepository.findAll();
         return  CelestialObjects;
     }
-    //Recherche des objets célestes par Id
-    //Recherche des objets célestes par date
-    //Recherche des objets céleste par utilisateur
 }
