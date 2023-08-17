@@ -44,7 +44,7 @@ public class SpaceObservationService {
     public ObservationResponseDTO getObservationByCelestialId(int celestialObjectId) {
         RestClient<CelestialObjectDTO, String> restClient = new RestClient<>();
         ObservationResponseDTO observationDTO = ObservationResponseDTO.builder().spaceObservations(spaceObservationRepository.findAllObservationsByObjectId(celestialObjectId))
-                .celestialObjectDTO(restClient.get("celestialOject/" + celestialObjectId, CelestialObjectDTO.class))
+                .celestialObjectDTO(restClient.get("celestialObject/" + celestialObjectId, CelestialObjectDTO.class))
                 .build();
         return observationDTO;
     }
