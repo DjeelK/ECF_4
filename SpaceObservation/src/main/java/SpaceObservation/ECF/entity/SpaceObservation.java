@@ -17,9 +17,9 @@ public class SpaceObservation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private int userId;
+    private int celestialObjectId;
     private String dateObservationCelestial;
-    private String observedCelestial;
-    private String observationPlaceCelestial;
+    private String placeObservationCelestial;
     private String instrumentUsed;
     private String viewingCondition;
     private String descriptionCelestial;
