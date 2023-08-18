@@ -1,11 +1,7 @@
 package SpaceObservation.ECF.service;
 
-import SpaceObservation.ECF.dto.CelestialObjectDTO;
-import SpaceObservation.ECF.dto.ObservationResponseDTO;
-import SpaceObservation.ECF.dto.UserDTO;
 import SpaceObservation.ECF.entity.SpaceObservation;
 import SpaceObservation.ECF.repository.SpaceObservationRepository;
-import SpaceObservation.ECF.tool.RestClient;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
