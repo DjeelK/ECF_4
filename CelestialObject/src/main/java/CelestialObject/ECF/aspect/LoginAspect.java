@@ -8,10 +8,11 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
+
 @Component
 @Aspect
 public class LoginAspect {
-    @Before("execution(* com.example.celestialobjectservice.controller.CelestialObjectController.*(..))")
+    @Before("execution(* CelestialObject.ECF.controller.CelestialObjectController.*(..))")
     public void testToken() {
         RestClient<String> restClient = new RestClient<>();
         HttpServletRequest servletRequest = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
