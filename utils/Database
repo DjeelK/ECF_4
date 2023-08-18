@@ -1,0 +1,24 @@
+CREATE TABLE `celestial_object` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+CREATE TABLE `space_observation` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `celestial_object_id` int NOT NULL,
+  `date_observation_celestial` varchar(255) DEFAULT NULL,
+  `description_celestial` varchar(255) DEFAULT NULL,
+  `instrument_used` varchar(255) DEFAULT NULL,
+  `place_observation_celestial` varchar(255) DEFAULT NULL,
+  `user_id` int NOT NULL,
+  `viewing_condition` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+CREATE TABLE `user` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `password` varchar(255) DEFAULT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci

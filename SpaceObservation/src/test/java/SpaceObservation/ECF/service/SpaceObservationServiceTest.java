@@ -45,7 +45,7 @@ public class SpaceObservationServiceTest {
                 1, 1, "2023-08-18", "Observatoire",
                 "Telescope", "Ciel découvert", "Ciel étoilé magnifique");
 
-        // Compare fields except the automatically generated ID
+
         Assertions.assertEquals(expectedObservation.getUserId(), actualObservation.getUserId());
         Assertions.assertEquals(expectedObservation.getCelestialObjectId(), actualObservation.getCelestialObjectId());
         Assertions.assertEquals(expectedObservation.getDateObservationCelestial(), actualObservation.getDateObservationCelestial());
