@@ -32,29 +32,17 @@ public class SpaceObservationService {
     }
 
     //ByUserId
-    public ObservationResponseDTO getObservationByUserId(int userId) {
-        RestClient<UserDTO, String> restClient = new RestClient<>();
-        ObservationResponseDTO observationDTO = ObservationResponseDTO.builder().spaceObservations(spaceObservationRepository.findObservationsByUserId(userId))
-                .userDTO(restClient.get("user/" + userId, UserDTO.class))
-                .build();
-        return observationDTO;
+    public List<SpaceObservation> getObservationsByUserId(int userId) {
+        return spaceObservationRepository.findObservationsByUserId(userId);
     }
 
     //ByCelestialId
-    public ObservationResponseDTO getObservationByCelestialId(int celestialObjectId) {
-        RestClient<CelestialObjectDTO, String> restClient = new RestClient<>();
-        ObservationResponseDTO observationDTO = ObservationResponseDTO.builder().spaceObservations(spaceObservationRepository.findAllObservationsByObjectId(celestialObjectId))
-                .celestialObjectDTO(restClient.get("celestialObject/" + celestialObjectId, CelestialObjectDTO.class))
-                .build();
-        return observationDTO;
+    public List<SpaceObservation> getObservationsByCelestialId(int celestialObjectId) {
+        return spaceObservationRepository.findAllObservationsByCelestialObjectId(celestialObjectId);
     }
-
     //ByPlace (à la place de date)
     public List<SpaceObservation> getObservationsByPlace(String placeObservationCelestial) {
-        List<SpaceObservation> spaceObservations = spaceObservationRepository.findObservationsByPlace(placeObservationCelestial);
-        if (!spaceObservations.isEmpty()) {
-            return spaceObservations;
-        }
-        throw new RuntimeException("Observations not found for the specified place");
+        return spaceObservationRepository.findByPlaceObservationCelestial(placeObservationCelestial);
     }
+
 }

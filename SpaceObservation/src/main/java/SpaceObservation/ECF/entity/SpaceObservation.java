@@ -11,7 +11,6 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name="space_observation")
 public class SpaceObservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

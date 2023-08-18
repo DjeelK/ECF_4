@@ -4,7 +4,7 @@ import org.springframework.web.client.RestTemplate;
 
 
 public class RestClient<T,V> {
-    private String urlApiUtilisateur = "http://localhost:8082/api/";
+    private String urlApiUtilisateur = "http://localhost:8083/api/";
 
     private String urlApiToken = "http://localhost:8084/api/test";
     private RestTemplate template;

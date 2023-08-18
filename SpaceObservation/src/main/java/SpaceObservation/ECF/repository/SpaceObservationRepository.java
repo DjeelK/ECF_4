@@ -9,6 +9,6 @@ import java.util.List;
 @Repository
 public interface SpaceObservationRepository extends CrudRepository<SpaceObservation, Integer> {
     List<SpaceObservation> findObservationsByUserId(int userId);
-    List<SpaceObservation> findObservationsByPlace(String placeObservationCelestial);
-    List<SpaceObservation> findAllObservationsByObjectId(int celestialObjectId);
+    List<SpaceObservation> findByPlaceObservationCelestial(String placeObservationCelestial);
+    List<SpaceObservation> findAllObservationsByCelestialObjectId(int celestialObjectId);
 }
