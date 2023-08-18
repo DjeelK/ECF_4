@@ -1,5 +1,6 @@
 package CelestialObject.ECF.controller;
 
+import CelestialObject.ECF.dto.CelestialObjectDTO;
 import CelestialObject.ECF.service.CelestialObjectService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,20 +19,19 @@ public class CelestialObjectController {
         this.celestialObjectService = celestialObjectService;
     }
     @PostMapping("")
-    public ResponseEntity<CelestialObject> post(@RequestParam String title) {
-        CelestialObject celestialObject = celestialObjectService.createCelestialObject(title);
-        return ResponseEntity.ok(celestialObject);
+    public ResponseEntity<CelestialObject> createCelestialObject(@RequestBody CelestialObjectDTO celestialObjectDTO) {
+        CelestialObject celestialObject = celestialObjectService.createCelestialObject(celestialObjectDTO);
+        return ResponseEntity.status(HttpStatus.CREATED).body(celestialObject);
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<CelestialObject> get(@PathVariable int id) {
+    public ResponseEntity<CelestialObject> getCelestialObject(@PathVariable int id) {
         CelestialObject celestialObject = celestialObjectService.getCelestialById(id);
         return ResponseEntity.ok(celestialObject);
     }
     @GetMapping("/objectslist")
-    public ResponseEntity<List<CelestialObject>> getAllCelestials() {
-        return new ResponseEntity(celestialObjectService.getAllCelestialObject(), HttpStatus.OK);
+    public ResponseEntity<List<CelestialObject>> getAllCelestialObjects() {
+        List<CelestialObject> celestialObjects = celestialObjectService.getAllCelestialObject();
+        return ResponseEntity.ok(celestialObjects);
     }
-
-    //Faire get search
 }

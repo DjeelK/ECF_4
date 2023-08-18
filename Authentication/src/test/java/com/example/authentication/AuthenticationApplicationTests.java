@@ -1,10 +1,10 @@
-package AuthentificationSpace.ECF;
+package com.example.authentication;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class EcfApplicationTests {
+class AuthenticationApplicationTests {
 
 	@Test
 	void contextLoads() {
